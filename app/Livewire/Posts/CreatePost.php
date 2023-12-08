@@ -2,18 +2,18 @@
 
 namespace App\Livewire\Posts;
 
+use Illuminate\Support\Facades\Auth;
+
 use Livewire\Component;
 
 class CreatePost extends Component
 {
-    public $todos = [];
+    public $title = 'jelly';
 
-    public $todo = '';
-
-    public function add()
+    public function render()
     {
-        $this->todos[] = $this->todo;
-
-        $this->todo = '';
+        return view('livewire.posts.create-post')->with([
+            'author' =>  'mgmg',
+        ]);
     }
 }
